@@ -1,0 +1,38 @@
+Running an RDBMS inside a DOCKER CONTAINER
+
+1) Run Docker and download mysql Image
+2) Connect Docker and Run SQL
+
+# docker login
+
+# docker pull mysql
+
+# docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
+
+# docker run --name testsql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Ambassadornmb12! -d mysql
+
+# docker ps
+
+# docker exec -it testsql /bin/bash
+
+# mysql -uroot -p -A
+
+# CREATE DATABASE province;
+
+# use province
+
+CREATE TABLE sindh ( 
+    district    varchar(80),        
+    area        int,
+    weather     varchar(80)
+);
+
+# desc sindh;
+
+INSERT INTO sindh VALUES ('karachi', '3780', 'mild');
+INSERT INTO sindh VALUES ('larkana', '82', 'hot');
+INSERT INTO sindh VALUES ('sukkur', '5165', 'hot');   
+
+# exit 
+
+#docker stop testsql
